@@ -28,7 +28,12 @@ jobs:
           at: /tmp/workspace
       - aws-cli/setup
       - aws-s3/sync:
-          arguments: --acl public-read --cache-control 'max-age=86400'
+          arguments: |
+            --acl public-read \
+            --cache-control "max-age=86400"
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-region: AWS_REGION
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           from: /tmp/workspace/out
           to: 's3://youlinqu.com'
 
