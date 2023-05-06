@@ -7,11 +7,10 @@ orbs:
 
 jobs:
   build:
-    working_directory: ~/portfolio
     docker:
       - image: circleci/node:16.3.0
     steps:
-      - checkout:
+      - checkout
       - node/install:
           node-version: 16.3.0
           install-yarn: true
