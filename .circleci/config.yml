@@ -20,14 +20,11 @@ jobs:
           paths:
             - .
       - run: ls portfolio
-      - aws-cli/setup:
-          aws-access-key-id: AKIA2HVNOX2EP76PLKHX
-          aws-secret-access-key: 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
-          aws-default-region: us-east-2
+      - aws-cli/setup
       - run:
           name: Deploy to S3
           command: |
-            aws s3 sync portfolio/out s3://quyoulin.com --acl public-read --cache-control "max-age=86400"
+            aws s3 sync portfolio/out s3://quyoulin.com --cache-control "max-age=86400"
 
 workflows:
   version: 2

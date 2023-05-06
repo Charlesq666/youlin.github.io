@@ -8,4 +8,4 @@ S3_BUCKET="quyoulin.com"
 LOCAL_FOLDER="portfolio/out"
 
 # Sync the local folder to the S3 bucket
-aws s3 sync "$LOCAL_FOLDER" "s3://$S3_BUCKET" --acl public-read --cache-control "max-age=86400"
+aws s3 sync "$LOCAL_FOLDER" "s3://$S3_BUCKET" --cache-control "max-age=86400"
