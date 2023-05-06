@@ -7,17 +7,16 @@ orbs:
 
 jobs:
   build:
+    working_directory: ~/portfolio
     executor:
       name: node/default
     steps:
-      - checkout
-      - run:
-          name: Change to portfolio directory
-          command: cd portfolio
+      - checkout:
+          path: ~/portfolio
       - node/install-packages
       - run:
           name: Build
-          command: yarn build && yarn export
+          command: yarn build
       - persist_to_workspace:
           root: portfolio
           paths:
