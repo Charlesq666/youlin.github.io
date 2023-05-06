@@ -20,7 +20,10 @@ jobs:
           paths:
             - .
       - run: ls portfolio
-      - aws-cli/setup
+      - aws-cli/setup:
+          aws-access-key-id: AKIA2HVNOX2EP76PLKHX
+          aws-secret-access-key: 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
+          aws-default-region: us-east-2
       - run:
           name: Deploy to S3
           command: |
