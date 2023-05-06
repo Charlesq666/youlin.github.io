@@ -21,8 +21,6 @@ jobs:
           paths:
             - out
   deploy:
-    executor:
-      name: aws-cli/default
     steps:
       - attach_workspace:
           at: /tmp/workspace
