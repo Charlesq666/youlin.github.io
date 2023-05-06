@@ -20,7 +20,7 @@ jobs:
           aws-region: AWS_REGION
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           from: portfolio/out
-          to: 's3://youlinqu.com'
+          to: 's3://quyoulin.com'
 
 workflows:
   version: 2
