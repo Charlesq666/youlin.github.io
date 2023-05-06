@@ -3,7 +3,7 @@ version: 2.1
 orbs:
   aws-s3: circleci/aws-s3@3.1
   aws-cli: circleci/aws-cli@3.1
-  node: circleci/node@4.1
+  node: circleci/node@5.1
 
 jobs:
   build:
@@ -11,12 +11,15 @@ jobs:
       name: node/default
     steps:
       - checkout
+      - run:
+          name: Change to portfolio directory
+          command: cd portfolio
       - node/install-packages
       - run:
           name: Build
-          command: yarn build
+          command: yarn build && yarn export
       - persist_to_workspace:
-          root: .
+          root: portfolio
           paths:
             - out
   deploy:
