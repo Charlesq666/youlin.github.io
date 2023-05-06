@@ -15,6 +15,12 @@ jobs:
           install-yarn: true
       - run: cd portfolio && yarn 
       - run: cd portfolio && yarn build
+      - persist_to_workspace:
+          root: portfolio/out
+          paths:
+            - .
+      - run: ls
+      - run: 
       - aws-cli/setup
       - run:
           name: Deploy to S3
