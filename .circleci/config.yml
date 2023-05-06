@@ -2,11 +2,10 @@ version: 2.1
 
 orbs:
   aws-s3: circleci/aws-s3@3.1
-  aws-cli: circleci/aws-cli@3.1
   node: circleci/node@5.1
 
 jobs:
-  build:
+  build-and-deploy:
     docker:
       - image: circleci/node:latest
     steps:
@@ -16,17 +15,6 @@ jobs:
           install-yarn: true
       - run: cd portfolio && yarn 
       - run: cd portfolio && yarn build
-      - persist_to_workspace:
-          root: portfolio
-          paths:
-            - out
-  deploy:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - attach_workspace:
-          at: /tmp/workspace
-      - aws-cli/setup
       - aws-s3/sync:
           arguments: |
             --acl public-read \
@@ -34,17 +22,15 @@ jobs:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-region: AWS_REGION
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          from: /tmp/workspace/out
+          from: portfolio/out
           to: 's3://youlinqu.com'
+          overwrite: true
 
 workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - build
-      - deploy:
-          requires:
-            - build
+      - build-and-deploy:
           filters:
             branches:
               only: main
