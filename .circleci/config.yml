@@ -24,7 +24,6 @@ jobs:
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           from: portfolio/out
           to: 's3://youlinqu.com'
-          overwrite: true
 
 workflows:
   version: 2
