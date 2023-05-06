@@ -19,8 +19,9 @@ jobs:
           root: portfolio/out
           paths:
             - .
-      - run: ls portfolio
       - aws-cli/setup
+      - run: aws s3 ls
+      - run: aws --version
       - run:
           name: Deploy to S3
           command: |
