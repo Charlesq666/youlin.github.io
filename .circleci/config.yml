@@ -1,8 +1,8 @@
 version: 2.1
 
 orbs:
-  aws-s3: circleci/aws-s3@1.0.17
-  aws-cli: circleci/aws-cli@0.1.22
+  aws-s3: circleci/aws-s3@3.1
+  aws-cli: circleci/aws-cli@3.1
   node: circleci/node@4.1
 
 jobs:
@@ -14,7 +14,7 @@ jobs:
       - node/install-packages
       - run:
           name: Build
-          command: yarn build && yarn export
+          command: yarn build
       - persist_to_workspace:
           root: .
           paths:
