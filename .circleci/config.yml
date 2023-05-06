@@ -8,15 +8,15 @@ orbs:
 jobs:
   build:
     working_directory: ~/portfolio
-    executor:
-      name: node/default
+    docker:
+      - image: circleci/node:16.3.0
     steps:
       - checkout:
-          path: ~/portfolio
-      - node/install-packages
-      - run:
-          name: Build
-          command: yarn build
+      - node/install:
+          node-version: 16.3.0
+          install-yarn: true
+      - run: cd portfolio && yarn 
+      - run: cd portfolio && yarn build
       - persist_to_workspace:
           root: portfolio
           paths:
