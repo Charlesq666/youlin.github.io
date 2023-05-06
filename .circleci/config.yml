@@ -8,11 +8,11 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/node:18.04
+      - image: circleci/node:18
     steps:
       - checkout
       - node/install:
-          node-version: 18.0.0
+          node-version: 18
           install-yarn: true
       - run: cd portfolio && yarn 
       - run: cd portfolio && yarn build
