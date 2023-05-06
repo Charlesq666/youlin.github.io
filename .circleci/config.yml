@@ -19,10 +19,7 @@ jobs:
           root: portfolio/out
           paths:
             - .
-      - aws-cli/setup:
-          aws-access-key-id: $AWS_ACCESS_KEY_ID
-          aws-secret-access-key: $AWS_SECRET_ACCESS_KEY
-          aws-default-region: us-east-2 
+      - aws-cli/setup
       - run: aws s3 ls
       - run: aws --version
       - run:
