@@ -21,10 +21,11 @@ jobs:
           paths:
             - out
   deploy:
+    docker:
+      - image: cimg/base:stable
     steps:
       - attach_workspace:
           at: /tmp/workspace
-      - aws-cli/setup
       - aws-s3/sync:
           arguments: |
             --acl public-read \
