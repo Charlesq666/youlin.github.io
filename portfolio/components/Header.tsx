@@ -1,11 +1,12 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 type Props = {};
 
 function Header({}: Props) {
+  const router = useRouter()
   return (
     <header className="sticky top-0 flex items-start justify-between max-w-6xl mx-auto z-20 p-5">
       <motion.div 
@@ -30,18 +31,21 @@ function Header({}: Props) {
           bgColor="transparent"
         />
         <SocialIcon
-          url="https://www.linkedin.com/in/youlin-qu-2517a6131/"
+          url="https://github.com/Charlesq666"
           fgColor="gray"
           bgColor="transparent"
         />
-        <SocialIcon
-          url="https://www.linkedin.com/in/youlin-qu-2517a6131/"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-      </motion.div>
 
-      <Link href='/#hero'> top </Link>
+        <button onClick={() => {router.push('/')}} className="z-1">
+          <SocialIcon
+            url="https://wechat.com"
+            fgColor="gray"
+            bgColor="transparent"
+            className="z-0"
+          />
+        </button>
+        
+      </motion.div>
 
       <motion.div 
         className="flex flex-row items-center text-gray-300 cursor-pointer"
