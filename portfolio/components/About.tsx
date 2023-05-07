@@ -3,6 +3,8 @@ import React from "react";
 
 type Props = {};
 
+const ABOUT_IMG = 'https://charlesqimg.s3.us-east-2.amazonaws.com/20230116_153842.jpg'
+
 const About = (props: Props) => {
   return (
     <motion.div
@@ -11,7 +13,7 @@ const About = (props: Props) => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.2 }}
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-24 basic">
         About
       </h3>
 
@@ -28,8 +30,8 @@ const About = (props: Props) => {
           opacity: 1,
         }}
         viewport={{ once: true }}
-        src="https://charlesqimg.s3.us-east-2.amazonaws.com/20230116_153842.jpg"
-        className="-mb-20 md:mb-0 flex-shrink-0 rounded-full h-56 w-56 object-cover md:rounded-lg md:h-64 md:w-64 xl:w-[500px] xl:h-[600px]"
+        src={ABOUT_IMG}
+        className="-mb-20 md:mb-0 flex-shrink-0 rounded-full h-56 w-56 object-cover md:rounded-lg md:h-64 md:w-64 xl:w-96 xl:h-96"
       />
 
       <div className="space-y-10 px-0 md:px-10">
