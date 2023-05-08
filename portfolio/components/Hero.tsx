@@ -20,7 +20,7 @@ const Hero = (props: Props) => {
         className="relative rounded-full h-40 w-40 mx-auto object-cover"
       />
       <div className="z-20">
-        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
+        <h2 className="text-sm uppercase text-secondary pb-2 tracking-[15px]">
           Software Engineer
         </h2>
         <h1 className="text-4xl lg:text-5xl font-semibold px-10">
@@ -43,10 +43,6 @@ const Hero = (props: Props) => {
 
           <Link href='/#skills'>
             <button className="heroButton">Skills</button>
-          </Link>
-
-          <Link href='/#contact'>
-            <button className="heroButton">Contact</button>
           </Link>
         </div>
       </div>

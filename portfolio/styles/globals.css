@@ -4,11 +4,23 @@
 
 @layer components{
   .heroButton {
-    @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-sm 
-    tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A];
+    @apply px-6 py-2 border border-tertiary rounded-full uppercase text-sm 
+    tracking-widest text-gray-500 transition-all hover:border-primary/40 hover:text-primary;
   }
 
   h3.basic {
-    @apply uppercase tracking-[20px] text-gray-500 text-2xl;
+    @apply uppercase tracking-[20px] text-gray-500 text-2xl absolute top-24;
+  }
+
+  .component-basic {
+    @apply flex flex-col text-center md:flex-row md:text-left relative h-screen justify-evenly items-center mx-auto max-w-full px-10 overflow-hidden
+  }
+
+  .contactInput {
+    @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-tertiary text-gray-500 placeholder-gray-500 transition-all focus:border-primary/40 focus:text-primary hover:border-primary/40;
+  }
+
+  .scrollbar-basic {
+    @apply scrollbar-track-gray-400/20 scrollbar-thumb-primary/80 scrollbar-thin
   }
 }

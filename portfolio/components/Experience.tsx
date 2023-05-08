@@ -31,16 +31,16 @@ const experiences: [ExperienceType] = [
 const Experience = (props: Props) => {
   return (
     <motion.div
-      className="h-screen flex flex-col text-left relative overflow-hidden max-w-full px-10 justify-center mx-auto items-center"
+      className="component-basic"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.2 }}
     >
-      <h3 className="basic absolute top-24">
+      <h3 className="basic">
         Experience
       </h3>
 
-      <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory">
+      <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar-basic">
         <ExperienceCard experience={experiences[0]} />
         <ExperienceCard experience={experiences[0]} />
         <ExperienceCard experience={experiences[0]} />

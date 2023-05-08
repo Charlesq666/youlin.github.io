@@ -4,23 +4,22 @@ import Skill from './Skill'
 
 type Props = {}
 
+const skillUrls = [
+  'https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon.png',
+  'https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon.png',
+]
+
 const Skills = (props: Props) => {
   return (
-    <motion.div className='flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center'>
-      <h3 className='absolute top-24 basic'>skills</h3>
+    <motion.div className='component-basic'>
+      <h3 className='basic'>skills</h3>
 
       <h3 className='absolute top-36 uppercase tracking-3[px] text-gray-500 text-sm'>hover over a skill for currecy proficiency</h3>
     
       <div className='grid grid-cols-4 gap-5'>
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
+        {skillUrls.map((skillUrl, index) => (
+          <Skill key={index} imgUrl={skillUrl} />
+        ))}
       </div>
     </motion.div>
   )

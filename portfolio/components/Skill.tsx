@@ -3,24 +3,19 @@ import React from "react";
 
 type Props = {
   fromLeft?: boolean;
+  imgUrl: string;
 };
 
-const Skill = (props: Props) => {
+const Skill = ( {fromLeft, imgUrl} : Props) => {
   return (
-    <div className="group relative flex cursor-pointer">
+    <div className="relative flex">
       <motion.img
-        initial={{ opacity: 0, x: props.fromLeft ? -200 : 200 }}
+        initial={{ opacity: 0, x: fromLeft ? -200 : 200 }}
         transition={{ duration: 1}}
         whileInView={{ opacity: 1, x: 0 }}
-        src="https://cdn.worldvectorlogo.com/logos/typescript.svg"
-        className="rounded-full border border-gray-500 w-24 h-24 xl:w-32 xl:h-32 filter group-hover:grayscale transition-duration-300 ease-in-out"
+        src={imgUrl}
+        className="rounded-full border border-gray-500 w-24 h-24 xl:w-32 xl:h-32"
       />
-
-      <div className="absolute opacity-0 group-hover:opacity-70 duration-300 ease-in-out group-hover:bg-white h-24 w-24 rounded-full">
-        <div className="flex items-center justify-center h-full">
-          <p className="text-3xl font-bold text-black opacity-100">90%</p>
-        </div>
-      </div>
     </div>
   );
 };
