@@ -12,9 +12,9 @@ const Skill = ( {fromLeft, skillObj} : Props) => {
   return (
     <div className="relative flex group">
       <motion.div
-        initial={{ opacity: 0, x: fromLeft ? -200 : 200 }}
-        transition={{ duration: 1}}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0}}
+        transition={{ duration: 1.5}}
+        whileInView={{ opacity: 1}}
       >
         <Image
           src={skillObj.imgUrl}

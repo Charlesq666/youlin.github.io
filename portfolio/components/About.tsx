@@ -18,7 +18,7 @@ const About = (props: Props) => {
         About
       </h3>
 
-      <div className="max-w-7xl flex flex-col items-center justify-center gap-10">
+      <div className="pt-12 md:pt-0 max-w-7xl flex flex-col items-center justify-center gap-10">
         <motion.div 
           initial={{
             x: -200,
@@ -38,7 +38,7 @@ const About = (props: Props) => {
             alt='about me'
             width={500}
             height={500}
-            className="flex-shrink-0 rounded-full h-56 w-56 object-cover md:h-64 md:w-64 xl:w-96 xl:h-96"
+            className="flex-shrink-0 rounded-full h-40 w-40 object-cover md:h-64 md:w-64 xl:w-96 xl:h-96"
           />
         </motion.div>
 

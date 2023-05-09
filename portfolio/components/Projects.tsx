@@ -2,6 +2,7 @@ import { ProjectType } from "@/types";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
+import ProjectCard from "./ProjectCard";
 
 type Props = {};
 
@@ -27,52 +28,13 @@ const Projects = (props: Props) => {
     >
       <h3 className="basic">Projects</h3>
 
-      <div className="h-[99%] relative w-full flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar scrollbar-basic">
+      <div className="relative w-full flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar scrollbar-basic">
         {projects.map((project, index) => (
-          <div
-            className="w-screen snap-center flex flex-col space-y-5 justify-center p-10 sm:p-20 md:p-44 h-screen items-center"
-            key={index}
-          >
-            <motion.div
-              className="w-40 h-40 md:96 md:h-96 rounded-md "
-              initial={{
-                opacity: 0,
-                y: -300,
-              }}
-              transition={{ duration: 1.2 }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{ once: true }}
-            >
-              <Image 
-                className="object-cover object-center"
-                src={project.imgUrl}
-                alt=""
-                width={600}
-                height={600}
-              />
-            </motion.div>
-
-            <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-2xl md:text-4xl font-semibold text-center">
-                {project.title}
-              </h4>
-            </div>
-            
-            <ul className="list-disc max-h-[50%] overflow-y-scroll scrollbar-basic">
-              {project.descriptions.map((description, index) => (
-                <li className="text-md md:text-lg text-center md:text-left" key={index}>
-                  {description}
-                </li>
-              ))}
-            </ul>
-          </div>
+           <ProjectCard key={index} project={project}/>
         ))}
       </div>
 
-      <div className="w-full absolute top-[30%] bg-primary/10 left-0 h-[500px] -skew-y-12"></div>
+      <div className="w-full absolute top-[30%] bg-primary/10 left-0 h-[500px] -skew-y-12 z-0"></div>
     </motion.div>
   );
 };
