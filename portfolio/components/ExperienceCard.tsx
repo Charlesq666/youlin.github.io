@@ -9,10 +9,10 @@ type Props = {
 
 const ExperienceCard = ({ experience }: Props) => {
   return (
-    <article className="max-h-[600px] md:max-h-[1200px] flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[300px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 overflow-hidden">
+    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[300px] md:w-[600px] snap-center bg-[#292929] p-10 overflow-hidden">
       <a
         href={experience.companyUrl}
-        className="w-[100px] h-[100px] md:w-[200px] md:h-[200px] rounded-full"
+        className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] rounded-full"
       >
         <Image
           className="rounded-full object-cover object-center"
@@ -24,13 +24,13 @@ const ExperienceCard = ({ experience }: Props) => {
       </a>
 
       <div className="px-0 md:px-10">
-        <h4 className="text-2xl md:text-4xl font-light">{experience.title}</h4>
-        <p className="text-xl font-bold md:text-2xl mt-1">{experience.company}</p>
+        <h4 className="text-center text-xl md:text-3xl font-light">{experience.title}</h4>
+        <p className="text-lg font-bold md:text-2xl mt-1">{experience.company}</p>
 
-        <div className="flex my-2 gap-2 flex-wrap">
+        <div className="flex my-2 gap-2 overflow-x-hidden hover:overflow-x-visible">
           {experience.techImgs.map((imgUrl, index) => (
             <Image
-              className="rounded-full object-center flex-shrink-0 w-8 h-8 md:w-10 md:h-10"
+              className="rounded-full object-center flex-shrink-0 w-6 h-6 md:w-8 md:h-8"
               src={imgUrl}
               alt=""
               key={index}
@@ -40,7 +40,7 @@ const ExperienceCard = ({ experience }: Props) => {
           ))}
         </div>
 
-        <p className="uppercase py-5 text-gray-300">
+        <p className="text-sm md:text-md uppercase py-2 md:py-5 text-gray-300">
           {experience.from} - {experience.to}
         </p>
 

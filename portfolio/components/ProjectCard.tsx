@@ -34,8 +34,8 @@ const ProjectCard = ( {project} : Props) => {
         />
       </motion.div>
 
-      <div className="h-[60%] space-y-10 px-0 md:px-10 max-w-6xl z-10">
-        <h4 className="h-[20%] text-2xl md:text-4xl font-semibold text-center">
+      <div className="h-[70%] gap-6 px-0 md:px-10 max-w-6xl z-10">
+        <h4 className="h-[20%] text-xl md:text-2xl lg:text-3xl font-semibold text-center">
           {project.title}
         </h4>
         <ul className="h-[80%] list-disc overflow-y-scroll scrollbar scrollbar-basic">
