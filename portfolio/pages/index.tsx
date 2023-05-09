@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Head from "next/head";
 import About from "@/components/About";
-import Experience from "@/components/Experience";
+import Experiences from "@/components/Experiences";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Contactme from "@/components/Contactme";
@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-basic">
       <Head>
-        <title>Portfolio</title>
+        <title>Youlin Qu</title>
       </Head>
     
       <Header />
@@ -24,8 +24,8 @@ export default function Home() {
         <About />
       </section>
 
-      <section id="experience" className="snap-center">
-        <Experience />
+      <section id="experiences" className="snap-center">
+        <Experiences />
       </section>
 
       <section id="projects" className="snap-center">

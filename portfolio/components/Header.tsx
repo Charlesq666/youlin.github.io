@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
+import Image from "next/image";
+import React, { Fragment, useEffect } from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { Dialog } from "@headlessui/react";
+import { Dialog, Transition } from "@headlessui/react";
 
 type Props = {};
 
-const WECHAT_IMG_URL = 'https://charlesqimg.s3.us-east-2.amazonaws.com/wechat.jpg'
+const WECHAT_IMG_URL = '/wechat.jpg'
 
 function Header({}: Props) {
   const router = useRouter()
@@ -15,36 +16,46 @@ function Header({}: Props) {
 
   return (
     <>
-      <Dialog
-        as="div"
-        className="fixed z-50 inset-0 overflow-y-auto"
-        open={isWechatOpen}
-        onClose={() => setIsWechatOpen(false)}
+      <Transition
+        show={isWechatOpen}
+        enter="ease-out duration-200"
+        enterFrom="opacity-0 scale-95"
+        enterTo="opacity-100 scale-100"
+        leave="ease-in duration-200"
+        leaveFrom="opacity-100 scale-100"
+        leaveTo="opacity-0 scale-95"
+        as={Fragment}
       >
-        <div className="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-          <Dialog.Overlay className="fixed inset-0 bg-gray-800 bg-opacity-50 transition-opacity" />
-          <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
-            &#8203;
-          </span>
-          <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
-            <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
-              WeChat ID
-            </Dialog.Title>
-            <div className="mt-2">
-              <img src={WECHAT_IMG_URL} alt="wechat" className="w-full" />
-            </div>
-            <div className="mt-4">
-              <button
-                type="button"
-                className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-secondary bg-primary border border-transparent rounded-md hover:bg-primary/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500"
-                onClick={() => setIsWechatOpen(false)}
-              >
-                Close
-              </button>
+        <Dialog
+          as="div"
+          className="fixed z-50 inset-0 overflow-y-auto"
+          onClose={() => setIsWechatOpen(false)}
+        >
+          <div className="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <Dialog.Overlay className="fixed inset-0 bg-gray-800 bg-opacity-50 transition-opacity" />
+            <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
+              &#8203;
+            </span>
+            <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+              <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                WeChat ID
+              </Dialog.Title>
+              <div className="mt-2">
+                <Image src={WECHAT_IMG_URL} alt="wechat" className="w-full" width={500} height={500}/>
+              </div>
+              <div className="mt-4">
+                <button
+                  type="button"
+                  className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-secondary bg-primary border border-transparent rounded-md hover:bg-primary/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500"
+                  onClick={() => setIsWechatOpen(false)}
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </Dialog>
+        </Dialog>
+      </Transition>
       <header className="sticky top-0 flex items-start justify-between max-w-6xl mx-auto z-20 p-5">
         <motion.div 
           className="flex flex-row items-center"

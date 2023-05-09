@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import React from "react";
+import Image from 'next/image'
 
 type Props = {};
 
-const ABOUT_IMG = 'https://charlesqimg.s3.us-east-2.amazonaws.com/20230116_153842.jpg'
+const ABOUT_IMG = '/about/me.jpg'
 
 const About = (props: Props) => {
   return (
@@ -18,7 +19,7 @@ const About = (props: Props) => {
       </h3>
 
       <div className="max-w-7xl flex flex-col items-center justify-center gap-10">
-        <motion.img
+        <motion.div 
           initial={{
             x: -200,
             opacity: 0,
@@ -31,9 +32,15 @@ const About = (props: Props) => {
             opacity: 1,
           }}
           viewport={{ once: true }}
-          src={ABOUT_IMG}
-          className="flex-shrink-0 rounded-full h-56 w-56 object-cover md:h-64 md:w-64 xl:w-96 xl:h-96"
-        />
+        >
+          <Image
+            src={ABOUT_IMG}
+            alt='about me'
+            width={500}
+            height={500}
+            className="flex-shrink-0 rounded-full h-56 w-56 object-cover md:h-64 md:w-64 xl:w-96 xl:h-96"
+          />
+        </motion.div>
 
         <div className="space-y-10 px-0 md:px-10">
           <h4 className="text-4xl font-semibold">

@@ -9,11 +9,11 @@
   }
 
   h3.basic {
-    @apply uppercase tracking-[20px] text-gray-500 text-2xl absolute top-24;
+    @apply mx-auto w-full text-center absolute top-24 uppercase tracking-[10px] md:tracking-[20px] text-gray-500 text-xl md:text-2xl;
   }
 
   .component-basic {
-    @apply flex flex-col text-center md:flex-row md:text-left relative h-screen justify-evenly items-center mx-auto max-w-full px-10 overflow-hidden
+    @apply h-screen flex flex-col md:flex-row text-center md:text-left relative justify-evenly items-center mx-auto max-w-full overflow-hidden
   }
 
   .contactInput {

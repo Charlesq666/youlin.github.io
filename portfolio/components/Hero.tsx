@@ -2,23 +2,30 @@ import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 import Link from "next/link";
+import Image from "next/image";
 
 type Props = {};
 
+const HERO_IMG = "/hero/me.jpg";
+
 const Hero = (props: Props) => {
   const [text, count] = useTypewriter({
-    words: ["Hi my name is Youlin Qu", "I am a software engineer", ""],
+    words: ["Hi my name is Charles", "A FULL STACK software engineer"],
     loop: true,
     delaySpeed: 2000,
   });
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
-      <img
-        src="https://charlesqimg.s3.us-east-2.amazonaws.com/self.png"
+      
+      <Image
+        src={HERO_IMG}
         alt="self"
         className="relative rounded-full h-40 w-40 mx-auto object-cover"
+        width={200}
+        height={200}
       />
+
       <div className="z-20">
         <h2 className="text-sm uppercase text-secondary pb-2 tracking-[15px]">
           Software Engineer
@@ -33,8 +40,8 @@ const Hero = (props: Props) => {
             <button className="heroButton">About</button>
           </Link>
 
-          <Link href='/#experience'>
-            <button className="heroButton">Experience</button>
+          <Link href='/#experiences'>
+            <button className="heroButton">Experiences</button>
           </Link>
 
           <Link href='/#projects'>

@@ -1,6 +1,7 @@
 import { ExperienceType } from "@/types";
 import { motion } from "framer-motion";
 import React from "react";
+import Image from "next/image";
 
 type Props = {
   experience: ExperienceType;
@@ -8,34 +9,33 @@ type Props = {
 
 const ExperienceCard = ({ experience }: Props) => {
   return (
-    <article className="max-h-[600px] md:max-h-[1200px] flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-point transition-opacity duration-200 overflow-hidden">
-      <motion.img
-        initial={{ 
-          opacity: 0,
-          y: -100
-        }}
-        transition={{ duration: 1.2 }}
-        whileInView={{ 
-          opacity: 1,
-          y: 0
-        }}
-        viewport={{ once: true }}
-        className="w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
-        src={experience.companylogo}
-        alt=""
-      />
+    <article className="max-h-[600px] md:max-h-[1200px] flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 overflow-hidden">
+      <a
+        href={experience.companyUrl}
+        className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] rounded-full"
+      >
+        <Image
+          className="rounded-full object-cover object-center"
+          src={experience.companylogo}
+          alt=""
+          width={200}
+          height={200}
+        />
+      </a>
 
       <div className="px-0 md:px-10">
         <h4 className="text-4xl font-light">{experience.title}</h4>
         <p className="font-bold text-2xl mt-1">{experience.company}</p>
 
-        <div className="flex space-x-2 my-2">
+        <div className="flex my-2 gap-2 flex-wrap">
           {experience.techImgs.map((imgUrl, index) => (
-            <img
-              className="h-10 w-10 rounded-full"
+            <Image
+              className="rounded-full object-center flex-shrink-0 w-10 h-10"
               src={imgUrl}
               alt=""
               key={index}
+              width={40}
+              height={40}
             />
           ))}
         </div>
