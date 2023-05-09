@@ -30,11 +30,11 @@ const Projects = (props: Props) => {
       <div className="h-[99%] relative w-full flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar scrollbar-basic">
         {projects.map((project, index) => (
           <div
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 justify-center p-20 md:p-44 h-screen items-center"
+            className="w-screen snap-center flex flex-col space-y-5 justify-center p-10 sm:p-20 md:p-44 h-screen items-center"
             key={index}
           >
             <motion.div
-              className="w-64 h-64 md:96 md:h-96 rounded-md "
+              className="w-40 h-40 md:96 md:h-96 rounded-md "
               initial={{
                 opacity: 0,
                 y: -300,
@@ -56,15 +56,15 @@ const Projects = (props: Props) => {
             </motion.div>
 
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-4xl font-semibold text-center">
+              <h4 className="text-2xl md:text-4xl font-semibold text-center">
                 {project.title}
               </h4>
             </div>
             
-            <ul className="h-[50%] overflow-y-auto scrollbar scrollbar-basic">
+            <ul className="list-disc max-h-[50%] overflow-y-scroll scrollbar-basic">
               {project.descriptions.map((description, index) => (
-                <li className="text-lg text-center md:text-left" key={index}>
-                  <p>{description}</p>
+                <li className="text-md md:text-lg text-center md:text-left" key={index}>
+                  {description}
                 </li>
               ))}
             </ul>

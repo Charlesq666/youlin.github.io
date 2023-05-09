@@ -43,10 +43,12 @@ const Skills = (props: Props) => {
 
       <h3 className='absolute top-32 uppercase tracking-3[px] text-gray-500 text-sm'>Hover over a skill to see its fullname</h3>
     
-      <div className='grid grid-cols-5 gap-5'>
-        {skillObjs.map((skillObj, index) => (
-          <Skill key={index} skillObj={skillObj} />
-        ))}
+      <div className='flex items-center justify-center'>
+        <div className='grid grid-cols-5 gap-5'>
+          {skillObjs.map((skillObj, index) => (
+            <Skill key={index} skillObj={skillObj} />
+          ))}
+        </div>
       </div>
     </motion.div>
   )
