@@ -10,7 +10,7 @@ type Props = {
 
 const Skill = ( {fromLeft, skillObj} : Props) => {
   return (
-    <div className="relative flex">
+    <div className="relative flex group">
       <motion.div
         initial={{ opacity: 0, x: fromLeft ? -200 : 200 }}
         transition={{ duration: 1}}
@@ -23,6 +23,9 @@ const Skill = ( {fromLeft, skillObj} : Props) => {
           width={128}
           height={128}
         />
+        <div className="rounded-full absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-80 transition-all duration-300 flex items-center justify-center">
+          <p className='text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300'>{skillObj.name}</p>
+        </div>
       </motion.div>
     </div>
   );

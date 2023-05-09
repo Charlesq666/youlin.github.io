@@ -27,10 +27,10 @@ const Projects = (props: Props) => {
     >
       <h3 className="basic">Projects</h3>
 
-      <div className="relative w-full flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar-basic bottom-2">
+      <div className="h-[99%] relative w-full flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar scrollbar-basic">
         {projects.map((project, index) => (
           <div
-            className="bottom-[-4px] w-screen flex-shrink-0 snap-center flex flex-col space-y-5 justify-center p-20 md:p-44 h-screen items-center"
+            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 justify-center p-20 md:p-44 h-screen items-center"
             key={index}
           >
             <motion.div

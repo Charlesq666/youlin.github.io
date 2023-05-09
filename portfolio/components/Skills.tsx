@@ -6,18 +6,18 @@ import { SkillObj } from '@/types'
 type Props = {}
 
 const skillObjs: SkillObj[] = [
-  { name: 'Python', imgUrl: 'skills/python.png' },
+  { name: 'Python', imgUrl: 'skills/python.svg' },
   { name: 'JavaScript', imgUrl: 'skills/js.png' },
   { name: 'TypeScript', imgUrl: 'skills/ts.png' },
   { name: 'React', imgUrl: 'skills/react.svg' },
-  { name: 'Next.js', imgUrl: 'skills/nextjs.png' },
+  { name: 'Next.js', imgUrl: 'skills/nextjs.svg' },
   { name: 'Vue', imgUrl: 'skills/vue.png' },
   { name: 'Flask', imgUrl: 'skills/flask.png' },
-  { name: 'FastAPI', imgUrl: 'skills/fastapi.jpg' },
+  { name: 'FastAPI', imgUrl: 'skills/fastapi.svg' },
   { name: 'Scrapy', imgUrl: 'skills/scrapy.png' },
   { name: 'Scikit-Learn', imgUrl: 'skills/scikit-learn.png' },
   { name: 'Pandas', imgUrl: 'skills/pandas.png' },
-  { name: 'AWS', imgUrl: 'skills/aws.png' },
+  { name: 'AWS', imgUrl: 'skills/aws.svg' },
   { name: 'AWS Lambda', imgUrl: 'skills/awslambda.png' },
   { name: 'AWS EC2', imgUrl: 'skills/ec2.png' },
   { name: 'AWS Route53', imgUrl: 'skills/route53.png' },
@@ -41,7 +41,7 @@ const Skills = (props: Props) => {
     <motion.div className='component-basic'>
       <h3 className='basic'>skills</h3>
 
-      <h3 className='absolute top-32 uppercase tracking-3[px] text-gray-500 text-sm'>hover over a skill for currecy proficiency</h3>
+      <h3 className='absolute top-32 uppercase tracking-3[px] text-gray-500 text-sm'>Hover over a skill to see its fullname</h3>
     
       <div className='grid grid-cols-5 gap-5'>
         {skillObjs.map((skillObj, index) => (
