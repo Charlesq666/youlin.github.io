@@ -5,15 +5,15 @@
 @layer components{
   .heroButton {
     @apply px-6 py-2 border border-tertiary rounded-full uppercase text-sm 
-    tracking-widest text-gray-500 transition-all hover:border-primary/40 hover:text-primary;
+    tracking-widest text-gray-600 transition-all hover:border-primary/40 hover:text-primary;
   }
 
   h3.basic {
-    @apply mx-auto w-full text-center absolute top-16 md:top-24 uppercase tracking-[10px] md:tracking-[20px] text-gray-500 text-xl md:text-2xl;
+    @apply h-[20%] w-full gap-2 flex flex-col items-center justify-center text-center uppercase tracking-[10px] md:tracking-[20px] text-gray-700 text-xl md:text-2xl;
   }
 
   .component-basic {
-    @apply pt-16 h-screen flex flex-col md:flex-row text-center md:text-left relative justify-evenly items-center mx-auto max-w-full overflow-hidden
+    @apply p-2 h-screen flex flex-col text-center md:text-left relative justify-evenly items-center mx-auto max-w-full overflow-hidden
   }
 
   .contactInput {

@@ -9,7 +9,7 @@ type Props = {
 
 const ExperienceCard = ({ experience }: Props) => {
   return (
-    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[300px] md:w-[600px] snap-center bg-[#292929] p-10 overflow-hidden">
+    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[300px] md:w-[600px] snap-center bg-secondary text-primary p-10 overflow-hidden">
       <a
         href={experience.companyUrl}
         className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] rounded-full"
@@ -40,7 +40,7 @@ const ExperienceCard = ({ experience }: Props) => {
           ))}
         </div>
 
-        <p className="text-sm md:text-md uppercase py-2 md:py-5 text-gray-300">
+        <p className="text-sm md:text-md uppercase py-2 md:py-5 text-gray-500">
           {experience.from} - {experience.to}
         </p>
 

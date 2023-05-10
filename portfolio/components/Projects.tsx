@@ -15,7 +15,7 @@ const projects: ProjectType[] = [
       "To address the limitations of SCL, I helpd to develop a Work Conserving Scheduler Cooperative Lock (WC-SCL) that allows multiple threads to share a lock slice, increasing lock efficiency and fairness among threads. I designed new heuristics for pairing mechanisms, built a benchmark suite, and implemented a Python-based simulator to test these mechanisms. By analyzing each thread's past critical section and non-critical section time, I aimed to better predict the future lock acquiring behavior of individual threads, ultimately leading to improved lock management and performance."
     ],
     imgUrl: "projects/lock.png",
-    
+
   }
 ];
 
@@ -29,7 +29,7 @@ const Projects = (props: Props) => {
     >
       <h3 className="basic">Projects</h3>
 
-      <div className="relative w-full flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar scrollbar-basic">
+      <div className="h-[80%] w-full flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar scrollbar-basic">
         {projects.map((project, index) => (
            <ProjectCard key={index} project={project}/>
         ))}

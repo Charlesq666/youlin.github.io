@@ -18,7 +18,7 @@ const About = (props: Props) => {
         About
       </h3>
 
-      <div className="h-full pt-12 md:pt-0 max-w-7xl flex flex-col items-center justify-center gap-10">
+      <div className="h-[80%] max-w-7xl flex flex-col items-center justify-center gap-10">
         <motion.div 
           initial={{
             x: -200,
@@ -32,7 +32,7 @@ const About = (props: Props) => {
             opacity: 1,
           }}
           viewport={{ once: true }}
-          className="rounded-full h-[35%] aspect-square overflow-hidden"
+          className="rounded-full h-[25%] aspect-square overflow-hidden"
         >
           <Image
             src={ABOUT_IMG}
@@ -43,14 +43,14 @@ const About = (props: Props) => {
           />
         </motion.div>
 
-        <div className="max-h-[65%] space-y-10 px-0 md:px-10">
-          <h4 className="text-4xl font-semibold">
+        <div className="h-[75%] space-y-10 px-0 md:px-10">
+          <h4 className="text-4xl font-semibold text-primary">
             Here is a{" "}
-            <span className="underline decoration-primary">little</span>{" "}
+            <span className="underline decoration-primary/80">little</span>{" "}
             background
           </h4>
 
-          <div className="max-h-[80%] overflow-y-auto scrollbar-basic">
+          <div className="max-h-[80%] overflow-y-auto scrollbar-basic text-primary">
             <p className="text-sm">
               As an ambitious and innovative Computer Science and Data Science graduate from the University of Wisconsin-Madison, I am deeply passionate about leveraging technology to create meaningful and user-centered solutions. With hands-on experience as the CTO of DiscoverE Inc. and a Software Engineer at EasyJobs Inc., I have honed my skills in developing scalable, high-performance applications, managing diverse teams, and delivering projects using Agile methodologies. My technical expertise spans a wide range of programming languages, libraries, and frameworks, including Python, Golang, Java, FastAPI, React, and AWS services.
             </p>

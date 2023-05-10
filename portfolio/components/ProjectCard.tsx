@@ -10,10 +10,10 @@ type Props = {
 const ProjectCard = ( {project} : Props) => {
   return (
     <div
-      className="w-screen snap-center flex flex-col justify-center gap-10 items-center p-10 sm:p-20 md:p-44 h-screen"
+      className="h-full w-screen snap-center flex flex-col justify-center gap-10 items-center px-4 md:px-10 lg:px-20 pb-4"
     >
       <motion.div
-        className="max-w-[30%] max-h-[30%] rounded-md"
+        className="max-h-[30%] rounded-sm"
         initial={{
           opacity: 0,
           y: -300,
@@ -26,7 +26,7 @@ const ProjectCard = ( {project} : Props) => {
         viewport={{ once: true }}
       >
         <Image 
-          className="max-h-full object-cover object-center"
+          className="max-h-full aspect-square rounded-md object-cover object-center"
           src={project.imgUrl}
           alt=""
           width={600}
@@ -34,11 +34,11 @@ const ProjectCard = ( {project} : Props) => {
         />
       </motion.div>
 
-      <div className="h-[70%] gap-6 px-0 md:px-10 max-w-6xl z-10">
-        <h4 className="h-[20%] text-xl md:text-2xl lg:text-3xl font-semibold text-center">
+      <div className="text-primary h-[70%] mb-10 gap-3 px-0 md:px-10 max-w-6xl z-10">
+        <h4 className="h-[15%] text-xl md:text-2xl lg:text-3xl font-semibold text-center">
           {project.title}
         </h4>
-        <ul className="h-[80%] list-disc overflow-y-scroll scrollbar scrollbar-basic">
+        <ul className="h-[85%] list-disc overflow-y-scroll scrollbar scrollbar-basic">
           {project.descriptions.map((description, index) => (
             <li className="text-md md:text-lg text-center md:text-left" key={index}>
               {description}
