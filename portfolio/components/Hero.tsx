@@ -27,7 +27,7 @@ const Hero = (props: Props) => {
       />
 
       <div className="z-20">
-        <h2 className="text-sm uppercase text-secondary pb-2 tracking-[15px]">
+        <h2 className="text-sm uppercase text-secondary-200 pb-2 tracking-[15px]">
           Software Engineer
         </h2>
         <h1 className="text-primary text-3xl lg:text-5xl font-semibold px-10">

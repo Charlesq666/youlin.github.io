@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 @layer components{
   .heroButton {
     @apply px-6 py-2 border border-tertiary rounded-full uppercase text-sm 
