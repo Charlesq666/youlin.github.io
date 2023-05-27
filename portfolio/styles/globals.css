@@ -15,7 +15,7 @@ body {
   }
 
   h3.basic {
-    @apply h-[20%] w-full gap-2 flex flex-col items-center justify-center text-center uppercase tracking-[10px] md:tracking-[20px] text-gray-700 text-xl md:text-2xl;
+    @apply min-h-[25%] w-full gap-2 flex flex-col items-center justify-center text-center uppercase tracking-[10px] md:tracking-[20px] text-gray-700 text-xl md:text-2xl;
   }
 
   .component-basic {

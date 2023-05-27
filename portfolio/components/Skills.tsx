@@ -46,7 +46,7 @@ const Skills = (props: Props) => {
         </p>
       </h3>
     
-      <div className='h-[80%] flex items-center justify-center'>
+      <div className='h-[75%] flex items-center justify-center'>
         <div className='overflow-x-hidden overflow-y-auto scrollbar-basic max-h-full mb-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5'>
           {skillObjs.map((skillObj, index) => (
             <Skill key={index} skillObj={skillObj} />

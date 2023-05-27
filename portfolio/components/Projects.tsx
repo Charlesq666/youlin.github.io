@@ -29,7 +29,7 @@ const Projects = (props: Props) => {
     >
       <h3 className="basic">Projects</h3>
 
-      <div className="h-[80%] w-full flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar scrollbar-basic">
+      <div className="min-h-[75%] w-full flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar scrollbar-basic">
         {projects.map((project, index) => (
            <ProjectCard key={index} project={project}/>
         ))}

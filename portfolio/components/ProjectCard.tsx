@@ -16,7 +16,7 @@ const ProjectCard = ( {project} : Props) => {
         className="max-h-[30%] rounded-sm"
         initial={{
           opacity: 0,
-          y: -300,
+          y: 0,
         }}
         transition={{ duration: 1.2 }}
         whileInView={{
@@ -29,8 +29,8 @@ const ProjectCard = ( {project} : Props) => {
           className="max-h-full aspect-square rounded-md object-cover object-center"
           src={project.imgUrl}
           alt=""
-          width={600}
-          height={600}
+          width={300}
+          height={300}
         />
       </motion.div>
 
