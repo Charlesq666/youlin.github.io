@@ -6,16 +6,11 @@ import Experiences from "@/components/Experiences";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Contactme from "@/components/Contactme";
+import Layout from "@/components/Layout";
 
 export default function Home() {
   return (
-    <div className="bg-background text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-basic">
-      <Head>
-        <title>Youlin Qu</title>
-      </Head>
-    
-      <Header />
-    
+    <Layout>
       <section id='hero' className="snap-start">
         <Hero />
       </section>
@@ -39,6 +34,6 @@ export default function Home() {
       <section id="contact" className="snap-start">
         <Contactme />
       </section>
-    </div>
+    </Layout>  
   )
 }

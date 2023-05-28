@@ -8,7 +8,7 @@ type Props = {};
 const experienceObjs: ExperienceType[] = [
   {
     companyUrl: 'https://discover-e.org',
-    techImgs: ["/skills/aws.svg", "/skills/react.svg", "/skills/ts.png", "/skills/fastapi.svg", "skills/mongodb.svg", "skills/ec2.png", "skills/python.svg", "skills/route53.png", "/skills/html.png", "skills/css.png","skills/docker.png"],
+    techImgs: ["/skills/aws.svg", "/skills/react.svg", "/skills/ts.png", "/skills/fastapi.svg", "/skills/mongodb.svg", "/skills/ec2.png", "/skills/python.svg", "/skills/route53.png", "/skills/html.png", "/skills/css.png","/skills/docker.png"],
     companylogo: '/experiences/discover-e.svg',
     title: "Lead Software Engineer",
     company: "Discover-E",
@@ -26,7 +26,7 @@ const experienceObjs: ExperienceType[] = [
   }, 
   {
     companyUrl: 'https://easyjobs.so',
-    techImgs: ["/skills/aws.svg", "/skills/vue.png", "/skills/ts.png", "/skills/golang.png", "skills/mysql.png", "skills/python.svg", "skills/github.png", "skills/pandas.png", "skills/docker.png", "skills/awslambda.png", "skills/elasticsearch.png", "skills/flask.png", "skills/scrapy.png", "skills/scikit-learn.png"],
+    techImgs: ["/skills/aws.svg", "/skills/vue.png", "/skills/ts.png", "/skills/golang.png", "/skills/mysql.png", "/skills/python.svg", "/skills/github.png", "/skills/pandas.png", "/skills/docker.png", "/skills/awslambda.png", "/skills/elasticsearch.png", "/skills/flask.png", "/skills/scrapy.png", "/skills/scikit-learn.png"],
     companylogo: '/experiences/easyjobs.png',
     title: "Software Engineer",
     company: "EasyJobs",

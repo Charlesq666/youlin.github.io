@@ -14,7 +14,7 @@ const projects: ProjectType[] = [
       "While SCL has been effective in addressing scheduler subversion and improving fairness among threads, it has a shortcoming in that it is not work-conserving. In SCL, there can be instances where no thread holds the lock, but other threads are unable to acquire it because they are not the slice owner. This limitation can lead to inefficient use of resources and reduced system performance.",
       "To address the limitations of SCL, I helpd to develop a Work Conserving Scheduler Cooperative Lock (WC-SCL) that allows multiple threads to share a lock slice, increasing lock efficiency and fairness among threads. I designed new heuristics for pairing mechanisms, built a benchmark suite, and implemented a Python-based simulator to test these mechanisms. By analyzing each thread's past critical section and non-critical section time, I aimed to better predict the future lock acquiring behavior of individual threads, ultimately leading to improved lock management and performance."
     ],
-    imgUrl: "projects/lock.png",
+    imgUrl: "/projects/lock.png",
 
   }
 ];
