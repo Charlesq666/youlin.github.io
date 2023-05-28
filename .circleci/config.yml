@@ -7,17 +7,12 @@ jobs:
       - image: circleci/node:14
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: yarn
-      - run:
-          name: Build
-          command: yarn build
       - run:
           name: Deploy
           command: | 
-            ssh ubuntu@${EC2_IP} 'cd ~/ && git pull && yarn && yarn build && pm2 restart all' 
+            ssh ubuntu@${EC2_IP} 'cd ~/charlesqportfolio/portfolio && git pull && yarn && yarn build && pm2 restart all' 
 workflows:
   version: 2
-  build-and-deploy:
+  deploy:
     jobs:
       - deploy
