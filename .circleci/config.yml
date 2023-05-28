@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Deploy
           command: | 
-            ssh ubuntu@${EC2_IP} 'cd ~/charlesqportfolio/portfolio && git pull && yarn && yarn build && pm2 restart all' 
+            ssh -o StrictHostKeyChecking=no ubuntu@${EC2_IP} 'cd ~/charlesqportfolio/portfolio && git pull && yarn && yarn build && pm2 restart all' 
 workflows:
   version: 2
   deploy:
