@@ -1,10 +1,9 @@
 version: 2.1
-orbs:
-  node: circleci/node@4.1
+
 jobs:
   deploy:
     docker:
-      - image: circleci/node:14
+      - image: cimg/base:stable
     steps:
       - checkout
       - run:
