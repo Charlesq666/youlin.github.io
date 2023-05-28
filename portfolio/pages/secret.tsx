@@ -7,7 +7,7 @@ import { FileType } from "./api/files";
 
 type Props = {};
 
-const secret = (props: Props) => {
+const Secret = (props: Props) => {
   const {isLoading, error, data:files, refetch} = useQuery({
     queryKey: 'files',
     queryFn: async () => {
@@ -17,7 +17,7 @@ const secret = (props: Props) => {
   })
 
   if (isLoading) return <div>Loading...</div>
-  if (error) return <div>{error.message}</div>
+  if (error instanceof Error) return <div>{error.message}</div>
 
   return (
     <Layout>
@@ -42,4 +42,4 @@ const secret = (props: Props) => {
   );
 };
 
-export default secret;
+export default Secret;

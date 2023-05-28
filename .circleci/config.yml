@@ -1,29 +1,23 @@
 version: 2.1
-
 orbs:
-  aws-cli: circleci/aws-cli@3.1.5
-  node: circleci/node@5.1
-
+  node: circleci/node@4.1
 jobs:
-  build-and-deploy:
+  deploy:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:14
     steps:
       - checkout
-      - node/install:
-          node-version: latest
-          install-yarn: true
-      - run: cd portfolio && yarn 
-      - run: cd portfolio && yarn build
-      - persist_to_workspace:
-          root: portfolio/out
-          paths:
-            - .
-      - aws-cli/setup
+      - node/install-packages:
+          pkg-manager: yarn
       - run:
-          name: Deploy to S3
-          command: |
-            aws s3 sync portfolio/out s3://quyoulin.com --cache-control "max-age=86400"
-
+          name: Build
+          command: yarn build
+      - run:
+          name: Deploy
+          command: | 
+            ssh ubuntu@${EC2_IP} 'cd ~/ && git pull && yarn && yarn build && pm2 restart all' 
 workflows:
   version: 2
+  build-and-deploy:
+    jobs:
+      - deploy
