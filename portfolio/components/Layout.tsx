@@ -11,7 +11,7 @@ const Layout = ({children}: Props) => {
   <div className="bg-background text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-basic">
     <Head>
       <meta name="description" content="Portfolio Website" />   
-      <title>Youlin Qu's Website</title>
+      <title>Youlin Qu</title>
     </Head>    
 
     <Header />
