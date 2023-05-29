@@ -15,6 +15,7 @@ const ExperienceCard = ({ experience }: Props) => {
         className="w-[80px] h-[80px] md:w-[100px] md:h-[100px] rounded-full"
       >
         <Image
+          priority = {true}
           className="rounded-full object-cover object-center"
           src={experience.companylogo}
           alt=""
@@ -30,6 +31,7 @@ const ExperienceCard = ({ experience }: Props) => {
         <div className="flex my-2 gap-2 overflow-x-hidden hover:overflow-x-visible">
           {experience.techImgs.map((imgUrl, index) => (
             <Image
+              priority = {true}
               className="rounded-full object-center flex-shrink-0 w-6 h-6 md:w-8 md:h-8"
               src={imgUrl}
               alt=""

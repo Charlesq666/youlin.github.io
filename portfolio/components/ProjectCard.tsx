@@ -26,6 +26,7 @@ const ProjectCard = ( {project} : Props) => {
         viewport={{ once: true }}
       >
         <Image 
+          priority = {true}
           className="max-h-full aspect-square rounded-md object-cover object-center"
           src={project.imgUrl}
           alt=""

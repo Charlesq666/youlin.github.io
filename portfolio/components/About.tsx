@@ -35,6 +35,7 @@ const About = (props: Props) => {
           className="rounded-full h-[25%] aspect-square overflow-hidden"
         >
           <Image
+            priority = {true}
             src={ABOUT_IMG}
             alt='about me'
             width={500}

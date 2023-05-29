@@ -19,6 +19,7 @@ const Hero = (props: Props) => {
       <BackgroundCircles />
       
       <Image
+        priority = {true}
         src={HERO_IMG}
         alt="self"
         className="relative rounded-full h-40 w-40 mx-auto object-cover"

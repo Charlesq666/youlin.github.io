@@ -9,11 +9,11 @@ import ResumeLogo from "@/assets/ResumeLogo";
 
 type Props = {};
 
-const WECHAT_IMG_URL = '/wechat.jpg'
+const WECHAT_IMG_URL = "/wechat.jpg";
 
 function Header({}: Props) {
-  const router = useRouter()
-  const [isWechatOpen, setIsWechatOpen] = useState(false)
+  const router = useRouter();
+  const [isWechatOpen, setIsWechatOpen] = useState(false);
 
   return (
     <>
@@ -34,15 +34,28 @@ function Header({}: Props) {
         >
           <div className="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
             <Dialog.Overlay className="fixed inset-0 bg-gray-800 bg-opacity-50 transition-opacity" />
-            <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
+            <span
+              className="hidden sm:inline-block sm:align-middle sm:h-screen"
+              aria-hidden="true"
+            >
               &#8203;
             </span>
             <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
-              <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+              <Dialog.Title
+                as="h3"
+                className="text-lg font-medium leading-6 text-gray-900"
+              >
                 WeChat ID
               </Dialog.Title>
               <div className="mt-2">
-                <Image src={WECHAT_IMG_URL} alt="wechat" className="w-full" width={500} height={500}/>
+                <Image
+                  src={WECHAT_IMG_URL}
+                  alt="wechat"
+                  className="w-full"
+                  width={500}
+                  height={500}
+                  priority = {true}
+                />
               </div>
               <div className="mt-4">
                 <button
@@ -60,20 +73,20 @@ function Header({}: Props) {
 
       <header className="sticky top-0 w-full mx-auto z-20 md:p-5">
         <div className="flex items-center justify-between max-w-6xl mx-auto p-5">
-          <motion.div 
+          <motion.div
             className="flex flex-row items-center justify-center"
             initial={{
-                x: -500,
-                opacity: 0,
-                scale: 0.5
-              }}
+              x: -500,
+              opacity: 0,
+              scale: 0.5,
+            }}
             animate={{
-                x: 0,
-                opacity: 1,
-                scale: 1
-              }}
+              x: 0,
+              opacity: 1,
+              scale: 1,
+            }}
             transition={{
-              duration: .7,
+              duration: 0.7,
             }}
           >
             {/* Social Icons */}
@@ -95,33 +108,31 @@ function Header({}: Props) {
                 bgColor="transparent"
               />
             </button>
-
-            
           </motion.div>
 
           <div className="w-10 h-10">
-            <a href="https://docs.google.com/document/d/1TLjbq6Ykvp2CBdFxgIUitk3q8bOuaSOB/edit?usp=sharing&ouid=110553617090949454042&rtpof=true&sd=true"> 
-              <ResumeLogo /> 
+            <a href="https://docs.google.com/document/d/1TLjbq6Ykvp2CBdFxgIUitk3q8bOuaSOB/edit?usp=sharing&ouid=110553617090949454042&rtpof=true&sd=true">
+              <ResumeLogo />
             </a>
           </div>
 
-          <motion.div 
+          <motion.div
             className="flex flex-row items-center text-gray-300 cursor-pointer"
             initial={{
-                x: 500,
-                opacity: 0,
-                scale: 0.5
+              x: 500,
+              opacity: 0,
+              scale: 0.5,
             }}
             animate={{
-                x: 0,
-                opacity: 1,
-                scale: 1
+              x: 0,
+              opacity: 1,
+              scale: 1,
             }}
             transition={{
-              duration: .7,
-            }}>
-            
-            <button onClick={() => router.push('/#contact')}>
+              duration: 0.7,
+            }}
+          >
+            <button onClick={() => router.push("/#contact")}>
               <SocialIcon
                 className="cursor-pointer"
                 network="email"

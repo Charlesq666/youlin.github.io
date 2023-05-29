@@ -17,6 +17,7 @@ const Skill = ( {fromLeft, skillObj} : Props) => {
         whileInView={{ opacity: 1}}
       >
         <Image
+          priority = {true}
           src={skillObj.imgUrl}
           className="rounded-full border border-gray-500 w-24 h-24 xl:w-32 xl:h-32"
           alt=""
