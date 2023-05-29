@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Deploy
           command: | 
-            ssh -o StrictHostKeyChecking=no ubuntu@${EC2_IP} \ 
+            ssh -o StrictHostKeyChecking=no ubuntu@${EC2_IP} 
             'cd ~/charlesqportfolio/portfolio && \
              pm2 stop next-app && \
              git pull && \ 
