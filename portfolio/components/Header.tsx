@@ -58,76 +58,82 @@ function Header({}: Props) {
         </Dialog>
       </Transition>
 
-      <header className="sticky top-0 flex items-start justify-between max-w-6xl mx-auto z-20 p-5">
-        <motion.div 
-          className="flex flex-row items-center justify-center"
-          initial={{
-              x: -500,
-              opacity: 0,
-              scale: 0.5
+      <header className="sticky top-0 w-full mx-auto z-20 md:p-5">
+        <div className="flex items-center justify-between max-w-6xl mx-auto p-5">
+          <motion.div 
+            className="flex flex-row items-center justify-center"
+            initial={{
+                x: -500,
+                opacity: 0,
+                scale: 0.5
+              }}
+            animate={{
+                x: 0,
+                opacity: 1,
+                scale: 1
+              }}
+            transition={{
+              duration: .7,
             }}
-          animate={{
-              x: 0,
-              opacity: 1,
-              scale: 1
-            }}
-          transition={{
-            duration: .7,
-          }}
-        >
-          {/* Social Icons */}
-          <SocialIcon
-            url="https://www.linkedin.com/in/youlin-qu-2517a6131/"
-            fgColor="gray"
-            bgColor="transparent"
-          />
-          <SocialIcon
-            url="https://github.com/Charlesq666"
-            fgColor="gray"
-            bgColor="transparent"
-          />
-
-          <button onClick={() => setIsWechatOpen(true)}>
+          >
+            {/* Social Icons */}
             <SocialIcon
-              network="wechat"
+              url="https://www.linkedin.com/in/youlin-qu-2517a6131/"
               fgColor="gray"
               bgColor="transparent"
             />
-          </button>
-
-          
-        </motion.div>
-
-        <ResumeLogo className="" /> 
-
-        <motion.div 
-          className="flex flex-row items-center text-gray-300 cursor-pointer"
-          initial={{
-              x: 500,
-              opacity: 0,
-              scale: 0.5
-          }}
-          animate={{
-              x: 0,
-              opacity: 1,
-              scale: 1
-          }}
-          transition={{
-            duration: .7,
-          }}>
-          
-          <button onClick={() => router.push('/#contact')}>
             <SocialIcon
-              className="cursor-pointer"
-              network="email"
+              url="https://github.com/Charlesq666"
               fgColor="gray"
               bgColor="transparent"
             />
-            <p className="uppercase text-center hidden md:inline-flex text-sm text-gray-400">
-              Get in Touch
-            </p>
-          </button>
-        </motion.div>
+
+            <button onClick={() => setIsWechatOpen(true)}>
+              <SocialIcon
+                network="wechat"
+                fgColor="gray"
+                bgColor="transparent"
+              />
+            </button>
+
+            
+          </motion.div>
+
+          <div className="w-10 h-10">
+            <a href="https://docs.google.com/document/d/1TLjbq6Ykvp2CBdFxgIUitk3q8bOuaSOB/edit?usp=sharing&ouid=110553617090949454042&rtpof=true&sd=true"> 
+              <ResumeLogo /> 
+            </a>
+          </div>
+
+          <motion.div 
+            className="flex flex-row items-center text-gray-300 cursor-pointer"
+            initial={{
+                x: 500,
+                opacity: 0,
+                scale: 0.5
+            }}
+            animate={{
+                x: 0,
+                opacity: 1,
+                scale: 1
+            }}
+            transition={{
+              duration: .7,
+            }}>
+            
+            <button onClick={() => router.push('/#contact')}>
+              <SocialIcon
+                className="cursor-pointer"
+                network="email"
+                fgColor="gray"
+                bgColor="transparent"
+              />
+              <p className="uppercase text-center hidden md:inline-flex text-sm text-gray-400">
+                Get in Touch
+              </p>
+            </button>
+          </motion.div>
+        </div>
       </header>
     </>
   );
