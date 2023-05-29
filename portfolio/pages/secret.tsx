@@ -23,18 +23,13 @@ const Secret = (props: Props) => {
     <Layout>
       <div className="component-basic">
         {files && files.map((file: FileType, index: number) => (
-            <motion.a
+            <a
               key={index}
-              className="text-black rounded-2xl text-2xl bg-secondary-100 h-[100px] w-[200px] flex items-center justify-center"
-              whileHover={{
-                scale: 1.1,
-                transition: { duration: 0.5 },
-              }}
-              whileTap={{ scale: 0.95 }}
+              className="basic-button"
               href={file.url}
             >
               {file.name}
-            </motion.a>
+            </a>
           ))
         }
       </div>

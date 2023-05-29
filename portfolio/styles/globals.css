@@ -29,4 +29,8 @@ body {
   .scrollbar-basic {
     @apply scrollbar-track-gray-400/20 scrollbar-thumb-primary/80 scrollbar-thin
   }
+
+  .basic-button {
+    @apply text-black rounded-2xl text-2xl bg-secondary-100 h-[100px] w-[200px] flex items-center justify-center font-serif transition-all hover:scale-105 duration-150 active:scale-95 ease-in-out
+  }
 }
