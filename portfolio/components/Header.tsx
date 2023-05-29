@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import ResumeLogo from "@/assets/resumeLogo";
+import ResumeLogo from "@/assets/ResumeLogo";
 
 type Props = {};
 
