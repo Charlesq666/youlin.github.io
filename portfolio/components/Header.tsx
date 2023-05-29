@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import ResumeLogo from "@/assets/resumeLogo";
 
 type Props = {};
 
@@ -56,9 +57,10 @@ function Header({}: Props) {
           </div>
         </Dialog>
       </Transition>
+
       <header className="sticky top-0 flex items-start justify-between max-w-6xl mx-auto z-20 p-5">
         <motion.div 
-          className="flex flex-row items-center"
+          className="flex flex-row items-center justify-center"
           initial={{
               x: -500,
               opacity: 0,
@@ -71,7 +73,8 @@ function Header({}: Props) {
             }}
           transition={{
             duration: .7,
-          }}>
+          }}
+        >
           {/* Social Icons */}
           <SocialIcon
             url="https://www.linkedin.com/in/youlin-qu-2517a6131/"
@@ -91,9 +94,12 @@ function Header({}: Props) {
               bgColor="transparent"
             />
           </button>
+
           
         </motion.div>
-          
+
+        <ResumeLogo className="" /> 
+
         <motion.div 
           className="flex flex-row items-center text-gray-300 cursor-pointer"
           initial={{
