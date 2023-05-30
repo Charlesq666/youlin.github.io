@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import ResumeLogo from "@/assets/ResumeLogo";
+import useMediaQuery from "@/hooks/useMediaQuery";
+import resumelogo from "@/assets/resume.svg"
 
 type Props = {};
 
@@ -14,6 +15,9 @@ const WECHAT_IMG_URL = "/wechat.jpg";
 function Header({}: Props) {
   const router = useRouter();
   const [isWechatOpen, setIsWechatOpen] = useState(false);
+  const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const MOBILE_MENU_ICON_CLASS = "w-full h-10 m-3 flex items-center";
 
   return (
     <>
@@ -54,7 +58,7 @@ function Header({}: Props) {
                   className="w-full"
                   width={500}
                   height={500}
-                  priority = {true}
+                  priority={true}
                 />
               </div>
               <div className="mt-4">
@@ -72,79 +76,183 @@ function Header({}: Props) {
       </Transition>
 
       <header className="sticky top-0 w-full mx-auto z-20 md:p-5">
-        <div className="flex items-center justify-between max-w-6xl mx-auto p-5">
-          <motion.div
-            className="flex flex-row items-center justify-center"
-            initial={{
-              x: -500,
-              opacity: 0,
-              scale: 0.5,
-            }}
-            animate={{
-              x: 0,
-              opacity: 1,
-              scale: 1,
-            }}
-            transition={{
-              duration: 0.7,
-            }}
-          >
-            {/* Social Icons */}
-            <SocialIcon
-              url="https://www.linkedin.com/in/youlin-qu-2517a6131/"
-              fgColor="gray"
-              bgColor="transparent"
-            />
-            <SocialIcon
-              url="https://github.com/Charlesq666"
-              fgColor="gray"
-              bgColor="transparent"
-            />
+        {isAboveMediumScreens ? (
+          <div className="flex items-center justify-between max-w-6xl mx-auto">
+            <motion.div
+              className="flex flex-row items-center justify-center"
+              initial={{
+                x: -500,
+                opacity: 0,
+                scale: 0.5,
+              }}
+              animate={{
+                x: 0,
+                opacity: 1,
+                scale: 1,
+              }}
+              transition={{
+                duration: 0.7,
+              }}
+            >
+              {/* Social Icons */}
 
-            <button onClick={() => setIsWechatOpen(true)}>
               <SocialIcon
-                network="wechat"
+                url="https://www.linkedin.com/in/youlin-qu-2517a6131/"
                 fgColor="gray"
                 bgColor="transparent"
               />
-            </button>
-          </motion.div>
+              <SocialIcon
+                url="https://github.com/Charlesq666"
+                fgColor="gray"
+                bgColor="transparent"
+              />
 
-          <div className="w-10 h-10">
-            <a href="https://docs.google.com/document/d/1TLjbq6Ykvp2CBdFxgIUitk3q8bOuaSOB/edit?usp=sharing&ouid=110553617090949454042&rtpof=true&sd=true">
-              <ResumeLogo />
-            </a>
+              <button onClick={() => setIsWechatOpen(true)}>
+                <SocialIcon
+                  network="wechat"
+                  fgColor="gray"
+                  bgColor="transparent"
+                />
+              </button>
+            </motion.div>
+
+            <div className="w-12 h-12">
+              <a href="https://docs.google.com/document/d/1TLjbq6Ykvp2CBdFxgIUitk3q8bOuaSOB/edit?usp=sharing&ouid=110553617090949454042&rtpof=true&sd=true">
+                <Image 
+                  className="ml-1 w-10"
+                  src={resumelogo}
+                  width={200} 
+                  height={200}
+                  alt="resume"
+                />
+              </a>
+            </div>
+
+            <motion.div
+              className="flex flex-row items-center text-gray-300 cursor-pointer"
+              initial={{
+                x: 500,
+                opacity: 0,
+                scale: 0.5,
+              }}
+              animate={{
+                x: 0,
+                opacity: 1,
+                scale: 1,
+              }}
+              transition={{
+                duration: 0.7,
+              }}
+            >
+              <button onClick={() => router.push("/#contact")}>
+                <SocialIcon
+                  className="cursor-pointer"
+                  network="email"
+                  fgColor="gray"
+                  bgColor="transparent"
+                />
+                <p className="uppercase text-center hidden md:inline-flex text-sm text-gray-400">
+                  Get in Touch
+                </p>
+              </button>
+            </motion.div>
           </div>
+        ) : (
+          <div>
+            {isMenuOpen ? (
+              <motion.div
+                initial={{
+                  opacity: 0,
+                }}
+                whileInView={{
+                  opacity: 1,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
+                className="absolute h-screen w-screen bg-background flex flex-col items-start justify-start"
+              >
+                <div className={MOBILE_MENU_ICON_CLASS}>
+                  <SocialIcon
+                    url="https://www.linkedin.com/in/youlin-qu-2517a6131/"
+                    fgColor="gray"
+                    bgColor="transparent"
+                  />
+                </div>
 
-          <motion.div
-            className="flex flex-row items-center text-gray-300 cursor-pointer"
-            initial={{
-              x: 500,
-              opacity: 0,
-              scale: 0.5,
-            }}
-            animate={{
-              x: 0,
-              opacity: 1,
-              scale: 1,
-            }}
-            transition={{
-              duration: 0.7,
-            }}
-          >
-            <button onClick={() => router.push("/#contact")}>
-              <SocialIcon
-                className="cursor-pointer"
-                network="email"
-                fgColor="gray"
-                bgColor="transparent"
-              />
-              <p className="uppercase text-center hidden md:inline-flex text-sm text-gray-400">
-                Get in Touch
-              </p>
-            </button>
-          </motion.div>
-        </div>
+                <div className={MOBILE_MENU_ICON_CLASS}>
+                  <SocialIcon
+                    url="https://github.com/Charlesq666"
+                    fgColor="gray"
+                    bgColor="transparent"
+                  />
+                </div>
+
+                <div className={MOBILE_MENU_ICON_CLASS}>
+                  <button onClick={() => setIsWechatOpen(true)}>
+                    <SocialIcon
+                      network="wechat"
+                      fgColor="gray"
+                      bgColor="transparent"
+                    />
+                  </button>
+                </div>
+
+                <div className={MOBILE_MENU_ICON_CLASS}>
+                  <a href="https://docs.google.com/document/d/1TLjbq6Ykvp2CBdFxgIUitk3q8bOuaSOB/edit?usp=sharing&ouid=110553617090949454042&rtpof=true&sd=true">
+                    <Image 
+                      className="ml-1 w-10"
+                      src={resumelogo}
+                      width={200} 
+                      height={200}
+                      alt="resume"
+                    />
+                  </a>
+                </div>
+                {/* CLOSE MARK */}
+                <button
+                  className="flex items-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="m-5 w-8 h-8 text-black"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </motion.div>
+            ) : (
+              <button
+                className="flex items-center"
+                onClick={() => setIsMenuOpen(true)}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="m-5 w-8 h-8 text-black"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+              </button>
+            )}
+          </div>
+        )}
       </header>
     </>
   );

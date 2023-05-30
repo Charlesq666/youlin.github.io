@@ -27,7 +27,7 @@ const Hero = (props: Props) => {
         height={200}
       />
 
-      <div className="z-20">
+      <div className="z-10">
         <h2 className="text-sm uppercase text-secondary-200 pb-2 tracking-[15px]">
           Software Engineer
         </h2>
