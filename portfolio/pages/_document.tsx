@@ -12,6 +12,7 @@ export default function Document() {
         <NextScript />
         {/* Global site tag (gtag.js) - Google Analytics */}
           <Script
+            id="google-analytics"
             src="https://www.googletagmanager.com/gtag/js?id=G-TR21HP6L6S"
             strategy="afterInteractive"
           />
