@@ -13,7 +13,8 @@ module.exports = {
         'secondary-200': '#b1b3ab',
         'tertiary': '#faede1',
         'background': '#eee4da',
-        'text-main': '#9aeedc'
+        'text-main': '#9aeedc',
+        'blog-bg': '#cabde1',
       }
     }
   },
