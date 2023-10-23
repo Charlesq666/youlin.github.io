@@ -19,7 +19,6 @@ jobs:
             pm2 start next-app
             "
 workflows:
-  version: 2
-  deploy:
+  start:
     jobs:
       - deploy
