@@ -4,7 +4,7 @@ const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
     output: 'export',
     env: {
-        IMG_PREFIX : isProd ? 'youlin.github.io' : ''
+        IMG_PREFIX : isProd ? '/youlin.github.io' : ''
     }
 }
 
