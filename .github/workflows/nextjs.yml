@@ -24,14 +24,13 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-env:
-  NODE_ENV: production
-
 jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Test environment
+        run: echo $NODE_ENV
       - name: Checkout
         uses: actions/checkout@v4
       - name: Detect package manager
