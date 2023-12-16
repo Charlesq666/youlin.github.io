@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 type Props = {};
 
-const ABOUT_IMG = '/youlin.github.io/about/me.jpg'
+const ABOUT_IMG = '/about/me.jpg'
 
 const About = (props: Props) => {
   return (
