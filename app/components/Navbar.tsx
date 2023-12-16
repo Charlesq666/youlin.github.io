@@ -16,7 +16,7 @@ const Navbar = (props: Props) => {
         >
             <nav className="flex items-center justify-evenly gap-2 w-full mx-4">
                 { links.map((navLink) => (
-                    <NavButton info={navLink} isActivated={pathName === navLink.url}/>
+                    <NavButton info={navLink} isActivated={pathName === navLink.url} key={navLink.name}/>
                 ))}
             </nav>
         </div>
