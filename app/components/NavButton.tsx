@@ -1,4 +1,4 @@
-import { NavLinkInfo } from '@/lib/data'
+import { NavLinkInfo } from '@/lib/navlinks'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import React from 'react'

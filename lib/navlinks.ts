@@ -13,7 +13,7 @@ export const links: NavLinkInfo[] = [
         url: '/about'
     },
     {
-        name: 'Blog',
-        url: '/blog'
+        name: 'Blogs',
+        url: '/blogs'
     }
 ]
