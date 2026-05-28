@@ -32,7 +32,7 @@ jobs:
       - name: Install node
         uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
           cache: pnpm
 
       - name: Install dependencies
@@ -46,7 +46,7 @@ jobs:
 
       - name: Build static site
         env:
-          NUXT_APP_BASE_URL: /
+          NUXT_APP_BASE_URL: /youlin.github.io/
         run: pnpm run generate
 
       - name: Disable Jekyll processing
