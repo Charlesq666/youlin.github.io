@@ -45,8 +45,6 @@ jobs:
         run: pnpm run typecheck
 
       - name: Build static site
-        env:
-          NUXT_APP_BASE_URL: /youlin.github.io/
         run: pnpm run generate
 
       - name: Upload Pages artifact
