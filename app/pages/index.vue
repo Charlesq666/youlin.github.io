@@ -1,76 +1,113 @@
+<script setup lang="ts">
+import { education, experience, profile, skills } from '~/data/resume'
+
+const avatarSrc = `${useRuntimeConfig().app.baseURL}${profile.avatar}`
+</script>
+
 <template>
-  <div>
-    <UPageHero
-      title="Nuxt Starter Template"
-      description="A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours."
-      :links="[{
-        label: 'Get started',
-        to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
-        target: '_blank',
-        trailingIcon: 'i-lucide-arrow-right',
-        size: 'xl'
-      }, {
-        label: 'Use this template',
-        to: 'https://github.com/nuxt-ui-templates/starter',
-        target: '_blank',
-        icon: 'i-simple-icons-github',
-        size: 'xl',
-        color: 'neutral',
-        variant: 'subtle'
-      }]"
-    />
+  <UContainer class="max-w-4xl py-12 sm:py-16">
+    <header class="mb-12 flex flex-col gap-6 sm:flex-row sm:items-center">
+      <img
+        :src="avatarSrc"
+        :alt="profile.name"
+        width="128"
+        height="128"
+        class="size-28 shrink-0 rounded-full object-cover ring-1 ring-default sm:size-32"
+      >
+      <div>
+        <h1 class="text-3xl font-bold tracking-tight text-highlighted sm:text-4xl">
+          {{ profile.name }}
+        </h1>
+        <p class="mt-2 text-lg text-muted">
+          {{ profile.headline }} · {{ profile.location }}
+        </p>
+        <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <ULink
+            :to="`mailto:${profile.email}`"
+            class="inline-flex items-center gap-1.5"
+          >
+            <UIcon name="i-lucide-mail" />{{ profile.email }}
+          </ULink>
+          <ULink
+            :to="profile.github"
+            target="_blank"
+            class="inline-flex items-center gap-1.5"
+          >
+            <UIcon name="i-simple-icons-github" />{{ profile.github.replace('https://', '') }}
+          </ULink>
+          <ULink
+            :to="profile.linkedin"
+            target="_blank"
+            class="inline-flex items-center gap-1.5"
+          >
+            <UIcon name="i-simple-icons-linkedin" />LinkedIn
+          </ULink>
+        </div>
+      </div>
+    </header>
 
-    <UPageSection
-      id="features"
-      title="Everything you need to build modern Nuxt apps"
-      description="Start with a solid foundation. This template includes all the essentials for building production-ready applications with Nuxt UI's powerful component system."
-      :features="[{
-        icon: 'i-lucide-rocket',
-        title: 'Production-ready from day one',
-        description: 'Pre-configured with TypeScript, ESLint, Tailwind CSS, and all the best practices. Focus on building features, not setting up tooling.'
-      }, {
-        icon: 'i-lucide-palette',
-        title: 'Beautiful by default',
-        description: 'Leveraging Nuxt UI\'s design system with automatic dark mode, consistent spacing, and polished components that look great out of the box.'
-      }, {
-        icon: 'i-lucide-zap',
-        title: 'Lightning fast',
-        description: 'Optimized for performance with SSR/SSG support, automatic code splitting, and edge-ready deployment. Your users will love the speed.'
-      }, {
-        icon: 'i-lucide-blocks',
-        title: '100+ components included',
-        description: 'Access Nuxt UI\'s comprehensive component library. From forms to navigation, everything is accessible, responsive, and customizable.'
-      }, {
-        icon: 'i-lucide-code-2',
-        title: 'Developer experience first',
-        description: 'Auto-imports, hot module replacement, and TypeScript support. Write less boilerplate and ship more features.'
-      }, {
-        icon: 'i-lucide-shield-check',
-        title: 'Built for scale',
-        description: 'Enterprise-ready architecture with proper error handling, SEO optimization, and security best practices built-in.'
-      }]"
-    />
+    <section class="mb-12">
+      <h2 class="mb-6 text-sm font-semibold uppercase tracking-wider text-primary">
+        Experience
+      </h2>
+      <div class="space-y-10">
+        <ResumeEntry
+          v-for="job in experience"
+          :key="job.organization"
+          :entry="job"
+        />
+      </div>
+    </section>
 
-    <UPageSection>
-      <UPageCTA
-        title="Ready to build your next Nuxt app?"
-        description="Join thousands of developers building with Nuxt and Nuxt UI. Get this template and start shipping today."
-        variant="subtle"
-        :links="[{
-          label: 'Start building',
-          to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
-          target: '_blank',
-          trailingIcon: 'i-lucide-arrow-right',
-          color: 'neutral'
-        }, {
-          label: 'View on GitHub',
-          to: 'https://github.com/nuxt-ui-templates/starter',
-          target: '_blank',
-          icon: 'i-simple-icons-github',
-          color: 'neutral',
-          variant: 'outline'
-        }]"
-      />
-    </UPageSection>
-  </div>
+    <section class="mb-12">
+      <h2 class="mb-6 text-sm font-semibold uppercase tracking-wider text-primary">
+        Education
+      </h2>
+      <div class="space-y-6">
+        <div
+          v-for="school in education"
+          :key="school.school"
+          class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between"
+        >
+          <div>
+            <h3 class="font-semibold text-highlighted">
+              {{ school.school }}
+            </h3>
+            <p class="text-muted">
+              {{ school.degree }}
+            </p>
+          </div>
+          <p class="shrink-0 text-sm text-muted">
+            {{ school.start }} – {{ school.end }} · {{ school.location }}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="mb-6 text-sm font-semibold uppercase tracking-wider text-primary">
+        Skills
+      </h2>
+      <dl class="space-y-4">
+        <div
+          v-for="(items, group) in skills"
+          :key="group"
+          class="flex flex-col gap-2 sm:flex-row sm:gap-4"
+        >
+          <dt class="w-32 shrink-0 font-medium text-highlighted">
+            {{ group }}
+          </dt>
+          <dd class="flex flex-wrap gap-2">
+            <UBadge
+              v-for="skill in items"
+              :key="skill"
+              :label="skill"
+              color="neutral"
+              variant="subtle"
+            />
+          </dd>
+        </div>
+      </dl>
+    </section>
+  </UContainer>
 </template>

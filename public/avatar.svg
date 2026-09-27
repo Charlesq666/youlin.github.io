@@ -1,0 +1,40 @@
+<svg viewBox="110 30 460 460" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Illustrated avatar</title>
+  <desc>Flat-style avatar of a young man with short spiky black hair wearing a teal polo shirt on a soft circular background.</desc>
+  <defs>
+    <clipPath id="c">
+      <circle cx="340" cy="260" r="230" />
+    </clipPath>
+  </defs>
+  <circle cx="340" cy="260" r="230" fill="#E6F0F2" />
+  <g clip-path="url(#c)">
+    <circle cx="340" cy="260" r="190" fill="#D3E6EA" />
+    <path d="M110 520 C120 420 190 385 270 372 L410 372 C490 385 560 420 570 520 Z" fill="#1F6E7E" />
+    <path d="M300 330 L380 330 L385 385 L340 425 L295 385 Z" fill="#F0CDB4" />
+    <path d="M270 372 L300 350 L340 425 L295 440 Z" fill="#2A8496" />
+    <path d="M410 372 L380 350 L340 425 L385 440 Z" fill="#2A8496" />
+    <path d="M340 425 L340 520" stroke="#175A67" stroke-width="3" />
+    <rect x="336" y="405" width="8" height="40" fill="#B9C4C8" />
+    <circle cx="340" cy="455" r="4" fill="#123F48" />
+    <circle cx="340" cy="490" r="4" fill="#123F48" />
+    <rect x="306" y="300" width="68" height="50" fill="#EBC2A6" />
+    <ellipse cx="248" cy="228" rx="20" ry="32" fill="#F0CDB4" />
+    <ellipse cx="432" cy="228" rx="20" ry="32" fill="#F0CDB4" />
+    <ellipse cx="252" cy="230" rx="9" ry="16" fill="#E0B094" />
+    <ellipse cx="428" cy="230" rx="9" ry="16" fill="#E0B094" />
+    <path d="M252 200 C252 130 290 105 340 105 C390 105 428 130 428 200 L428 250 C428 300 395 340 340 340 C285 340 252 300 252 250 Z" fill="#F4D5BE" />
+    <path d="M246 215 C236 150 250 95 290 78 L285 66 L306 72 L310 55 L326 66 L340 50 L352 64 L368 52 L376 68 L396 60 L396 76 L418 72 L412 90 C440 110 442 170 434 215 C428 178 420 158 408 148 L398 160 L388 146 L378 158 L364 146 L352 160 L340 148 L326 160 L314 148 L302 160 L290 148 L278 158 C262 170 252 190 246 215 Z" fill="#1B1B1F" />
+    <path d="M285 200 Q304 192 322 199" stroke="#1B1B1F" stroke-width="6" fill="none" stroke-linecap="round" />
+    <path d="M358 199 Q376 192 395 200" stroke="#1B1B1F" stroke-width="6" fill="none" stroke-linecap="round" />
+    <ellipse cx="304" cy="222" rx="12" ry="8" fill="#FFFFFF" />
+    <ellipse cx="376" cy="222" rx="12" ry="8" fill="#FFFFFF" />
+    <circle cx="305" cy="222" r="6" fill="#2B1A14" />
+    <circle cx="375" cy="222" r="6" fill="#2B1A14" />
+    <circle cx="307" cy="220" r="2" fill="#FFFFFF" />
+    <circle cx="377" cy="220" r="2" fill="#FFFFFF" />
+    <path d="M340 232 L334 270 Q340 276 348 272" stroke="#D9A98A" stroke-width="3" fill="none" stroke-linecap="round" />
+    <path d="M318 296 Q340 306 362 296" stroke="#C9776E" stroke-width="5" fill="none" stroke-linecap="round" />
+    <ellipse cx="288" cy="268" rx="14" ry="8" fill="#F2B9A6" opacity="0.5" />
+    <ellipse cx="392" cy="268" rx="14" ry="8" fill="#F2B9A6" opacity="0.5" />
+  </g>
+</svg>
